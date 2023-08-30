@@ -10,7 +10,7 @@ import { MatchService } from "src/app/services/match.service";
 })
 
 export class MatchesTableComponent implements OnInit {
-  matchestab: any;
+  matchestab: any = [];
   pageOfItems: Array<any>;
   constructor(
     private router: Router,
