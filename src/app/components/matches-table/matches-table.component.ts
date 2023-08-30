@@ -22,6 +22,7 @@ export class MatchesTableComponent implements OnInit {
   }
   
   display(x) {
+    // methode pour affich les information
     this.router.navigate([`matchinfo/${x}`]);
   }
   edit(id: number) {
