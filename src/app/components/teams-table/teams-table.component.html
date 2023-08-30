@@ -1,0 +1,24 @@
+<table class="table table-striped table-dark text-center">
+    <thead>
+        <tr>
+            <th scope="col">id </th>
+            <th scope="col">name </th>
+            <th scope="col">Stadium</th>
+            <th scope="col">Owner </th>
+            <th scope="col" class="">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of teamstab">
+            <th scope="row">{{i.id}}</th>
+            <td>{{i.name}}</td>
+            <td>{{i.stadium}}</td>
+            <td>{{i.owner}}</td>
+            <td><button class="btn btn-success mr-2" (click)="display(i.id)">Display</button>
+                <button class="btn btn-warning mr-2" (click)="edit(i.id)">Edit</button>
+                <button class="btn btn-danger mr-2" (click)="delete(i.id)">Delette</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

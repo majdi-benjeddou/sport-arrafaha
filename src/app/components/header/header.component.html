@@ -1,0 +1,64 @@
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+            <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+</div>
+<header class="site-navbar py-4" role="banner">
+
+    <div class="container">
+        <div class="d-flex align-items-center">
+            <div class="site-logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="ml-auto">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                        <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                        <li *ngIf=" isLoggedIn() && user.role == 'admin'"><a href="index.html">
+                                <div class="dropdown">
+                                    <a style="color: white;" class="dropdown-toggle nav-link" href="#" role="button"
+                                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        ADMIN
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" routerLink="addmatch" class="nav-link">Add Match</a>
+                                        <a class="dropdown-item" routerLink="addteam" class="nav-link">Add Team</a>
+                                        <a class="dropdown-item" routerLink="addplayer" class="nav-link">Add player</a>
+                                        <a class="dropdown-item" routerLink="add-stadium" class="nav-link">Add Stadium</a>
+                                        <a class="dropdown-item" routerLink="calcul" class="nav-link">Calcul</a>
+                                        <a class="dropdown-item" routerLink="admin" class="nav-link">Dashboard</a>
+                                    </div>
+                                </div>
+                            </a></li>
+                        <li *ngIf=" isLoggedIn() && user.role == 'user'"><a routerLink="matches" class="nav-link">Matches</a></li>
+                        <li *ngIf=" isLoggedIn() && user.role == 'user'"><a routerLink="teams" class="nav-link">teams</a></li>
+                        <li *ngIf=" isLoggedIn() && user.role == 'user'"><a routerLink="players" class="nav-link">Players</a></li>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" routerLink="search" class="nav-link">Search </a>
+                            <a class="dropdown-item" routerLink="search-team-stadium" class="nav-link">Search Team Stadium</a>
+                            <a class="dropdown-item" routerLink="search-player" class="nav-link">Search Players</a>
+                        </div>
+                        <li *ngIf=" !isLoggedIn()"><a routerLink="subscription" class="nav-link">Signup</a></li>
+                        <li *ngIf=" !isLoggedIn()"><a routerLink="signupAdmin" class="nav-link">Signup Admin</a></li>
+                        <li *ngIf=" !isLoggedIn()"><a routerLink="login" class="nav-link">Login</a></li>
+                        <li *ngIf=" isLoggedIn()"><a routerLink="" class="nav-link" (click)="logout()">Logout</a></li>
+
+                        <li><a routerLink="waether" class="nav-link">waether</a></li>
+                    </ul>
+                </nav>
+
+                <a href="#"
+                    class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+                        class="icon-menu h3 text-white"></span></a>
+            </div>
+        </div>
+    </div>
+
+</header>

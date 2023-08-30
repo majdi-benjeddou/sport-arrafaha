@@ -1,0 +1,25 @@
+<table class="table table-striped table-dark text-center">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">capacity</th>
+            <th scope="col">country</th>           
+            <th scope="col" class="">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- tr will be generated matchestab.length -->
+        <tr *ngFor="let c of stadiumTab">
+            <th scope="row">{{c._id}}</th>
+            <td>{{c.name}}</td>
+            <td>{{c.capacity}}</td>
+            <td>{{c.country}}</td>
+            <td>
+                <button class="btn btn-success mr-2" (click)="display(c._id)">Display</button>
+                <button class="btn btn-success mr-2" (click)="edit(c._id)">Edit</button>
+                <button class="btn btn-danger mr-2" (click)="delete(c._id)">Delette</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

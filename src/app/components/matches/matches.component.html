@@ -1,0 +1,5 @@
+<app-banner title="Matches"></app-banner>
+<br>
+<div *ngFor="let m of matchestab">
+    <app-score [X]="m"  (matcheOutput)="updateMatches($event)"></app-score>
+</div>

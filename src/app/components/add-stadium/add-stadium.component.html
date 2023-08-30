@@ -1,0 +1,59 @@
+
+
+<app-banner title="Add Stadium"></app-banner>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form [formGroup]="stadiumForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="name" placeholder="Name">
+                    </div>
+                    
+                    <div *ngIf="
+                    stadiumForm.controls['name'].invalid &&
+                    (stadiumForm.controls['name'].touched || 
+                    stadiumForm.controls['name'].dirty
+                    )
+
+                    ">
+                    <div *ngIf="stadiumForm.controls['name'].errors.required"> 
+                        Name is required
+                    </div>
+                    <div *ngIf="stadiumForm.controls['name'].errors.minlength"> 
+                        Name must have at least 4 chars
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" formControlName="capacity" placeholder="Capacity">
+                    </div>
+                    <div *ngIf="
+                        stadiumForm.controls['capacity'].invalid &&
+                        (stadiumForm.controls['capacity'].touched || 
+                        stadiumForm.controls['capacity'].dirty
+                        )
+
+                        ">
+                        <div *ngIf="stadiumForm.controls['capacity'].errors.required"> 
+                            capacity is required
+                        </div>
+                        <div *ngIf="stadiumForm.controls['lastName'].errors.minlength"> 
+                            capacity must have at least 3 chars
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="country" placeholder="Country">
+                    </div>
+                   
+                   
+                    <div class="form-group text-center">
+                        <input type="submit" (click)="addStadium()" class="btn btn-primary py-3 px-5" value="Add">
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 ml-auto">
+            </div>
+        </div>
+    </div>
+</div>
